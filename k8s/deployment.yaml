@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: demo-microservice
-        image: image-registry.openshift-image-registry.svc:5000/demo-microservice/demo-microservice:latest
+        image: image-registry.openshift-image-registry.svc:5000/demo-dev/demo-microservice:latest
         ports:
         - containerPort: 9090
