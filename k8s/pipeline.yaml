@@ -1,4 +1,4 @@
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: demo-microservice-pipeline
@@ -14,7 +14,7 @@ spec:
     default: "main"
   - name: IMAGE
     type: string
-    default: "image-registry.openshift-image-registry.svc:5000/demo-microservice/demo-microservice:latest"
+    default: "image-registry.openshift-image-registry.svc:5000/demo-dev/demo-microservice:latest"
   tasks:
   - name: fetch-repository
     taskRef:
