@@ -1,0 +1,52 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: demo-microservice-pipeline
+spec:
+  workspaces:
+  - name: shared-workspace
+  params:
+  - name: git-url
+    type: string
+    default: "https://github.com/intive-RedHat-Devex-demo/demo-micro-service.git"
+  - name: git-revision
+    type: string
+    default: "main"
+  - name: IMAGE
+    type: string
+    default: "image-registry.openshift-image-registry.svc:5000/demo-microservice/demo-microservice:latest"
+  tasks:
+  - name: fetch-repository
+    taskRef:
+      name: git-clone
+      kind: ClusterTask
+    workspaces:
+    - name: output
+      workspace: shared-workspace
+    params:
+    - name: url
+      value: $(params.git-url)
+    - name: revision
+      value: $(params.git-revision)
+  - name: build-image
+    taskRef:
+      name: buildah
+      kind: ClusterTask
+    params:
+    - name: IMAGE
+      value: $(params.IMAGE)
+    workspaces:
+    - name: source
+      workspace: shared-workspace
+    runAfter:
+    - fetch-repository
+  - name: update-deployment
+    taskRef:
+      name: kubernetes-actions
+      kind: Task
+    params:
+    - name: script
+      value: |
+        kubectl patch deployment demo-microservice -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"last-updated\":\"$(date +%s)\"}}}}}"
+    runAfter:
+    - build-image

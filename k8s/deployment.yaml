@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-microservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-microservice
+  template:
+    metadata:
+      labels:
+        app: demo-microservice
+      annotations:
+        last-updated: "0"
+    spec:
+      containers:
+      - name: demo-microservice
+        image: image-registry.openshift-image-registry.svc:5000/demo-microservice/demo-microservice:latest
+        ports:
+        - containerPort: 9090

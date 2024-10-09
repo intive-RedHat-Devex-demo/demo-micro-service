@@ -8,5 +8,6 @@ RUN gradle build --no-daemon
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from=build /app/build/libs/*.jar app.jar
+COPY catalog-info.yaml .
 EXPOSE 9090
 ENTRYPOINT ["java", "-jar", "app.jar"]

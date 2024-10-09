@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: demo-microservice
+  description: Demo microservice
+  tags:
+    - java
+    - spring-boot
+  annotations:
+    github.com/project-slug: intive-RedHat-Devex-demo/demo-micro-service
+    backstage.io/kubernetes-id: demo-microservice
+spec:
+  type: service
+  lifecycle: production
+  owner: intive-RedHat-Devex-demo
+  system: demo-microservice

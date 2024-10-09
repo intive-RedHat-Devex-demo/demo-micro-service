@@ -1,0 +1,7 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: demo-microservice
+spec:
+  lookupPolicy:
+    local: true
