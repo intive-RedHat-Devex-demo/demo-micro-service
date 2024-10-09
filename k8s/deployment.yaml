@@ -19,3 +19,10 @@ spec:
         image: image-registry.openshift-image-registry.svc:5000/demo-dev/demo-microservice:latest
         ports:
         - containerPort: 9090
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "250m"
+            memory: "256Mi"
