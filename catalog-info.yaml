@@ -8,6 +8,7 @@ metadata:
     - spring-boot
   annotations:
     github.com/project-slug: intive-RedHat-Devex-demo/demo-micro-service
+    backstage.io/kubernetes-namespace: demo-dev
     backstage.io/kubernetes-id: demo-microservice
 spec:
   type: service
