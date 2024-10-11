@@ -2,6 +2,8 @@ apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerTemplate
 metadata:
   name: demo-microservice-triggertemplate
+  labels:
+    backstage.io/kubernetes-id: demo-microservice  # Added label
 spec:
   params:
   - name: git-revision
@@ -30,6 +32,8 @@ apiVersion: triggers.tekton.dev/v1beta1
 kind: TriggerBinding
 metadata:
   name: demo-microservice-triggerbinding
+  labels:
+    backstage.io/kubernetes-id: demo-microservice  # Added label
 spec:
   params:
   - name: git-revision
@@ -39,6 +43,8 @@ apiVersion: triggers.tekton.dev/v1beta1
 kind: EventListener
 metadata:
   name: demo-microservice-eventlistener
+  labels:
+    backstage.io/kubernetes-id: demo-microservice  # Added label
 spec:
   triggers:
   - bindings:

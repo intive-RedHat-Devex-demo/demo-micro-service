@@ -2,6 +2,8 @@ apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: demo-microservice-pipeline
+  labels:
+    backstage.io/kubernetes-id: demo-microservice  # Added label
 spec:
   workspaces:
   - name: shared-workspace

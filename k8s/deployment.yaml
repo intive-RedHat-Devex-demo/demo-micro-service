@@ -4,6 +4,7 @@ metadata:
   name: demo-microservice
   labels:
     app: demo-microservice
+    backstage.io/kubernetes-id: demo-microservice  # Added label
 spec:
   replicas: 1
   selector:
@@ -13,8 +14,7 @@ spec:
     metadata:
       labels:
         app: demo-microservice
-      annotations:
-        last-updated: "0"
+        backstage.io/kubernetes-id: demo-microservice  # Added label
     spec:
       containers:
       - name: demo-microservice

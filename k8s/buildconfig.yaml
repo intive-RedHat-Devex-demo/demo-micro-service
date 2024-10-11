@@ -2,6 +2,8 @@ apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
   name: demo-microservice
+  labels:  # Added labels section
+    backstage.io/kubernetes-id: demo-microservice
 spec:
   source:
     git:
