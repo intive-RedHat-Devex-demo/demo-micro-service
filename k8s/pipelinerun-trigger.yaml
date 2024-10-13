@@ -3,7 +3,8 @@ kind: TriggerTemplate
 metadata:
   name: demo-microservice-triggertemplate
   labels:
-    backstage.io/kubernetes-id: demo-microservice  # Added label
+    backstage.io/kubernetes-id: demo-microservice
+    janus-idp.io/tekton : demo-microservice  # Added label
 spec:
   params:
   - name: git-revision
@@ -33,7 +34,8 @@ kind: TriggerBinding
 metadata:
   name: demo-microservice-triggerbinding
   labels:
-    backstage.io/kubernetes-id: demo-microservice  # Added label
+    backstage.io/kubernetes-id: demo-microservice
+    janus-idp.io/tekton : demo-microservice  # Added label
 spec:
   params:
   - name: git-revision

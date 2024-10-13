@@ -3,7 +3,8 @@ kind: Pipeline
 metadata:
   name: demo-microservice-pipeline
   labels:
-    backstage.io/kubernetes-id: demo-microservice  # Added label
+    backstage.io/kubernetes-id: demo-microservice
+    janus-idp.io/tekton : demo-microservice
 spec:
   workspaces:
   - name: shared-workspace
