@@ -12,7 +12,7 @@ metadata:
     backstage.io/kubernetes-id: demo-microservice
     janus-idp.io/tekton : demo-microservice   
     # argocd/app-selector: demo-microservice
-    argocd.argoproj.io/instance: demo-microservice
+    argocd/app-name: demo-microservice
     
 spec:
   type: service
