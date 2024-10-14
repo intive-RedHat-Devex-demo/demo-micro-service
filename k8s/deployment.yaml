@@ -6,6 +6,7 @@ metadata:
     app: demo-microservice
     backstage.io/kubernetes-id: demo-microservice  # Added label
     argocd/app-selector: demo-microservice
+    argocd/app-name: demo-microservice
 spec:
   replicas: 1
   selector:
