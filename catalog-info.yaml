@@ -10,10 +10,8 @@ metadata:
     github.com/project-slug: intive-RedHat-Devex-demo/demo-micro-service
     backstage.io/kubernetes-namespace: demo-dev
     backstage.io/kubernetes-id: demo-microservice
-    janus-idp.io/tekton : demo-microservice
-    # backstage.io/kubernetes-label-selector: 'app.kubernetes.io/instance=demo-microservice,app.kubernetes.io/name=demo-microservice'
-#    backstage.io/openshift-project-name: demo-dev
-    # backstage.io/kubernetes-id: demo-microservice
+    janus-idp.io/tekton : demo-microservice   
+    argocd/app-selector: demo-microservice
 spec:
   type: service
   lifecycle: production
