@@ -3,7 +3,8 @@ kind: BuildConfig
 metadata:
   name: demo-microservice
   labels:  # Added labels section
-    backstage.io/kubernetes-id: demo-microservice
+    backstage.io/kubernetes-id: demo-microservice    
+    argocd/app-selector: demo-microservice
 spec:
   source:
     git:
