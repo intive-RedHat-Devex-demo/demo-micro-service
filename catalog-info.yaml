@@ -11,7 +11,7 @@ metadata:
     backstage.io/kubernetes-namespace: demo-dev
     backstage.io/kubernetes-id: demo-microservice
     janus-idp.io/tekton : demo-microservice   
-    argocd/app-selector: openshift-gitops/demo-microservice
+    argocd/app-selector: demo-microservice
 spec:
   type: service
   lifecycle: production
