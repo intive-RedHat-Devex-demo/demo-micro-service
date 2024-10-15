@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @GetMapping("/hello")
-    public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return String.format("Hello welcome to the demo microservice with greetings, %s!", name);
+    public String sayHello(
+            @RequestParam(required = false, defaultValue = "World") String name) {
+        return "Hello, " + name + "!";
     }
 }

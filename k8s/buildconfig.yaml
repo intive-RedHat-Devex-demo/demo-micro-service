@@ -22,5 +22,5 @@ spec:
   triggers:
     - type: GitHub
       github:
-        secret: mysecret
+        secret: f3ed972eea5a8f15
     - type: ConfigChange
